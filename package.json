@@ -1,6 +1,6 @@
 {
   "name": "traffic_light_vis",
-  "version": "4.4.0-1.0-hs",
+  "version": "4.4.0-1.1",
   "description": "Traffic Light for Kibana Dashboards",
   "main": "gulpfile.js",
   "scripts": {
