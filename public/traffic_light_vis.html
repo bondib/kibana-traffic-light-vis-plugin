@@ -1,0 +1,16 @@
+<div ng-controller="TrafficLightVisController" class="traffic-light-vis">
+    <div class="metric-container" ng-repeat="metric in metrics">
+        <!-- height = width * 2.68 -->
+        <!-- light width 0.68% of traffic light width -->       
+        <div class="traffic-light-container" ng-style="{'width': vis.params.width+'px', 'height': ((vis.params.redAndGreenOnly ? 1.7688 : 2.68) * vis.params.width)+'px'}" ng-class="{'rotate-horizontal': vis.params.rotateHorizontaly}">
+            <div class="traffic-light">
+                <div class="light red" ng-class="{'on': metric.isRedLightOn,
+                    'two-state': vis.params.redAndGreenOnly }"></div>
+                <div ng-if="!vis.params.redAndGreenOnly" class="light yellow" ng-class="{'on': metric.isYellowOn }"></div>
+                <div class="light green" ng-class="{'on': metric.isGreenOn ,
+                 'two-state': vis.params.redAndGreenOnly}"></div>
+            </div>
+        </div>
+        <div>{{metric.label}}</div>
+    </div>
+</div>

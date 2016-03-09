@@ -1,0 +1,30 @@
+<div class="form-group">
+  <label>Traffic light width - {{ vis.params.width }}px</label>
+  <input type="range" ng-model="vis.params.width" class="form-control" min="30" max="120"/>
+</div>
+<div class="form-group">
+  <label>
+    <input type="checkbox" ng-model="vis.params.redAndGreenOnly">
+    Two state traffic light
+  </label>
+</div>
+<div class="form-group">
+  <label>Red threshold <span ng-bind-template="({{!vis.params.invertScale ? 'below':'above'}} and including this value will be red)"></span></label>
+  <input type="number" ng-model="vis.params.redThreshold" class="form-control"/>
+</div>
+<div class="form-group" ng-if="!vis.params.redAndGreenOnly">
+  <label>Green threshold <br><span ng-bind-template="({{!vis.params.invertScale ? 'above':'below'}} and including this value will be green)"></span></label>
+  <input type="number" ng-model="vis.params.greenThreshold" class="form-control"/>
+</div>
+<div class="form-group">
+  <label>
+    <input type="checkbox" ng-model="vis.params.invertScale">
+    Invert scale
+  </label>
+</div>
+<div class="form-group">
+  <label>
+    <input type="checkbox" ng-model="vis.params.rotateHorizontaly">
+    Rotate horizontaly
+  </label>
+</div>
