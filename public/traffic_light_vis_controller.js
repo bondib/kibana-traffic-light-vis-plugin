@@ -15,7 +15,7 @@ define(function (require) {
           metrics.push({
             label: column.title,
             value: metricValue,
-            isRedLightOn: (!params.invertScale && metricValue <= params.redThreshold) || (params.invertScale && metricValue.value >= params.redThreshold),
+            isRedLightOn: (!params.invertScale && metricValue <= params.redThreshold) || (params.invertScale && metricValue >= params.redThreshold),
             isYellowOn: (!params.invertScale && metricValue > params.redThreshold && metricValue < params.greenThreshold) || (params.invertScale && metricValue < params.redThreshold && metricValue > params.greenThreshold),
             isGreenOn: (params.redAndGreenOnly && ((!params.invertScale && metricValue > params.redThreshold) || (params.invertScale && metricValue < params.redThreshold))) || 
                  (!params.redAndGreenOnly && ((!params.invertScale && metricValue >= params.greenThreshold) || (params.invertScale && metricValue <= params.greenThreshold)))
